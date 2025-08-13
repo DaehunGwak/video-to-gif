@@ -53,10 +53,25 @@ export const useFileHandler = () => {
   };
 
   const downloadGif = (result: ConversionResult) => {
-    const a = document.createElement('a');
-    a.href = result.gifUrl;
-    a.download = `${result.fileName.split('.')[0]}.gif`;
-    a.click();
+    try {
+      const a = document.createElement('a');
+      a.href = result.gifUrl;
+      a.download = `${result.fileName.split('.')[0]}.gif`;
+      a.style.display = 'none';
+      
+      // DOM에 추가한 후 클릭
+      document.body.appendChild(a);
+      a.click();
+      
+      // 클릭 후 엘리먼트 제거
+      setTimeout(() => {
+        document.body.removeChild(a);
+      }, 100);
+    } catch (error) {
+      console.error('Download failed:', error);
+      // 브라우저가 a.download를 지원하지 않는 경우 새 탭에서 열기
+      window.open(result.gifUrl, '_blank');
+    }
   };
 
   const downloadAllGifs = async () => {
