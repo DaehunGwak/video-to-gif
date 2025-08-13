@@ -64,6 +64,17 @@ npm start
 
 ## 🌐 배포
 
+### GitHub Pages 배포
+
+1. 프로젝트를 GitHub에 푸시
+2. 배포 명령 실행:
+```bash
+npm run deploy
+```
+3. 몇 분 후 `https://[username].github.io/[repository-name]`에서 확인
+
+> **참고**: 첫 배포 후 GitHub 저장소 Settings > Pages에서 gh-pages 브랜치가 선택되어 있는지 확인하세요.
+
 ### Netlify 배포
 
 1. 프로젝트를 GitHub에 푸시
@@ -72,6 +83,7 @@ npm start
 4. 빌드 설정:
    - Build command: `npm run build`
    - Publish directory: `build`
+5. _headers 파일을 build 폴더에 복사하도록 설정
 
 ### Vercel 배포
 

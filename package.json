@@ -2,6 +2,7 @@
   "name": "video-to-gif",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://DaehunGwak.github.io/video-to-gif",
   "dependencies": {
     "@ffmpeg/core": "^0.12.10",
     "@ffmpeg/ffmpeg": "^0.12.15",
@@ -23,7 +24,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +47,7 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^24.2.1"
+    "@types/node": "^24.2.1",
+    "gh-pages": "^6.3.0"
   }
 }

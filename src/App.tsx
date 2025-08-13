@@ -34,7 +34,7 @@ function App() {
       setLogs(prev => [...prev, message]);
     });
 
-    // Load ffmpeg
+    // Load ffmpeg - GitHub Pages에서는 CDN 사용
     await ffmpeg.load({
       coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
       wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
